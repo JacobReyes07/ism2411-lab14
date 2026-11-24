@@ -29,3 +29,18 @@ df["unit_price"] = df["unit_price"].astype(float)
 df["quantity_sold"] = df["quantity_sold"].astype(int)
 df["revenue"] = (df["unit_price"] * df["quantity_sold"]).round(2)
 print(df.dtypes)
+ex(5)
+df.duplicated().sum()
+df = df.drop_duplicates()
+print(df.shape)
+ex(6)
+print(df.describe())
+df = df[df["quantity_sold"] != 9999]
+# Max quantity sold 9999 looks like someone probably accidentally typed it.
+# 59994 revenue is really high and probably an accident that is probably caused by the quantity sold of 9999 and 59994 is evenly divisible by 9999 which equals six so I think that is likely.
+ex(7)
+df.to_csv("data/clean_sales.csv", index = False)
+csdf = pd.read_csv("data/clean_sales.csv")
+csdf.info()
+csdf = pd.read_csv("data/clean_sales.csv", parse_dates=["order_date"])
+csdf.info()
