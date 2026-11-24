@@ -44,3 +44,10 @@ csdf = pd.read_csv("data/clean_sales.csv")
 csdf.info()
 csdf = pd.read_csv("data/clean_sales.csv", parse_dates=["order_date"])
 csdf.info()
+
+# Self Assessment 1
+# Drop feels the most ambiguous to me. I don't really understand how it knows when something is missing.
+# Self Assessment 2
+# They might but I think my way of describing it is pretty confusing and there's definitely people who can describe it better than me.
+# Self Assessment 3
+# It starts at 0 instead of 1.
